@@ -24,4 +24,4 @@ Aplicação estará rodando na porta 3000
 
 
 **OBS.:** \
-Houve alteração na API em algum momento causando falha na execução correta do projeto. Duvida se pode ocorrer novamente. Em uma versão que clonei, um campo se chamava "genre", clonando a mesma base dias depois, o campo passou a se chamar "genre_name"
+Houve alteração na API em algum momento causando falha na execução correta do projeto. Duvida se pode ocorrer novamente. Em uma versão que clonei, um campo se chamava "genre", clonando a mesma base dias depois, o campo passou a se chamar "genre_name".
