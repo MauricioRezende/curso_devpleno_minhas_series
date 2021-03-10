@@ -1,17 +1,23 @@
 README.nd provisório..
 
-Clonar servidor: https://github.com/tuliofaria/minhas-series-server
-Executar: npm install
-Tive problema com o sqlite3, com o comando a seguir funcionou: npm install https://github.com/mapbox/node-sqlite3/tarball/master
-Clonei o projeto terminal, não sei se tem relação o erro que ocorreu..
-Executar: node ./index.js
-Estará rodando na porta 3002
-(Os nomes dos campos da base de dados da API está sendo alterado .. em uma versão que baixei, um campo era "genre", em outra passou a ser "genre_name")
 
-Clonar esse projeto
-Executar: npm install
-Executar: npm start
-Estará rodando na porta 3000
+**Quando API não estava funcionando**
+Clonar servidor: https://github.com/tuliofaria/minhas-series-server\
+Na pasta raiz do projeto:\
+- Executar: npm install\
+- sqlite3 não estava instalando, para funcionar executei o comando: npm install https://github.com/mapbox/node-sqlite3/tarball/master\
+- Executar: node ./index.js\
+Estará rodando na porta 3002\
+(Os nomes dos campos da base de dados da API está sendo alterado .. em uma versão que baixei, um campo era "genre", em outra passou a ser "genre_name")\
+
+**Com API funcionando**
+
+Clonar esse projeto\
+Executar: npm install\
+Executar: npm start\
+Aplicação estará rodando na porta 3000\
+Executar: node node_modules\minhas-series-server\index.js \
+API estará rodando na porta 3002\
 
 # Getting Started with Create React App
 
