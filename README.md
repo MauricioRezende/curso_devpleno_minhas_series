@@ -5,7 +5,7 @@ README.nd provisório..
 
 Clonar servidor: https://github.com/tuliofaria/minhas-series-server \
 Executar: npm install\
-sqlite3 não estava instalando, para funcionar executei o comando: npm install https://github.com/mapbox/node-sqlite3/tarball/master\
+sqlite3 não estava instalando, para funcionar executei o comando: npm install https://github.com/mapbox/node-sqlite3/tarball/master \
 Executar: node ./index.js\
 Estará rodando na porta 3002\
 (Os nomes dos campos da base de dados da API foi alterado .. em uma versão que baixei, um campo era "genre", em outra passou a ser "genre_name")\
