@@ -1,14 +1,14 @@
 README.nd provisório..
 
 
-**Quando API não estava funcionando**
-Clonar servidor: https://github.com/tuliofaria/minhas-series-server\
-Na pasta raiz do projeto:\
-- Executar: npm install\
-- sqlite3 não estava instalando, para funcionar executei o comando: npm install https://github.com/mapbox/node-sqlite3/tarball/master\
-- Executar: node ./index.js\
+**Quando API não estava funcionando** 
+
+Clonar servidor: https://github.com/tuliofaria/minhas-series-server \
+Executar: npm install\
+sqlite3 não estava instalando, para funcionar executei o comando: npm install https://github.com/mapbox/node-sqlite3/tarball/master\
+Executar: node ./index.js\
 Estará rodando na porta 3002\
-(Os nomes dos campos da base de dados da API está sendo alterado .. em uma versão que baixei, um campo era "genre", em outra passou a ser "genre_name")\
+(Os nomes dos campos da base de dados da API foi alterado .. em uma versão que baixei, um campo era "genre", em outra passou a ser "genre_name")\
 
 **Com API funcionando**
 
