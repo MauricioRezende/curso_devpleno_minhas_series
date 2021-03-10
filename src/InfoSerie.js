@@ -82,7 +82,7 @@ const NovoGenero = (props) => {
                                     {form.status === 'ASSISTIDO' && <Badge color='success'>Assistido</Badge>}
                                     {form.status === 'PARA_ASSISTIR' && <Badge color='warning'>Para assistir</Badge>}
                                     <br />
-                                    Gênero: {data.genre}
+                                    Gênero: {data.genre_name}
                                     {/* 
                                     Tem uma versão do servidor que o nome desse campo é "genre_name"
                                     Gênero: {data.genre_name}

@@ -1,0 +1,38 @@
+{
+  "series": {
+    "1": {
+      "name": "La casa de papel",
+      "status": "WATCHED",
+      "genre_id": 1,
+      "comments": "",
+      "poster": "//image.tmdb.org/t/p/original/yVUAfbrP5HDJugXraB7KQS0yz6Z.jpg",
+      "background": "//image.tmdb.org/t/p/original/piuRhGiQBYWgW668eSNJ2ug5uAO.jpg"
+    },
+    "1615384936984": {
+      "name": "Supernatural",
+      "genre_id": "",
+      "poster": "//image.tmdb.org/t/p/original/ovFzkkKknAo2SbM2DfOabxRvzmy.jpg",
+      "background": "//image.tmdb.org/t/p/original/nVRyd8hlg0ZLxBn9RaI7mUMQLnz.jpg"
+    },
+    "1615384991121": {
+      "name": "Fear the Walking Dead",
+      "status": "ASSISTIDO",
+      "genre_id": 1615384899026,
+      "comments": "Muito bom",
+      "poster": "//image.tmdb.org/t/p/original/tbgPaIEZa9BuKKESdyapOn0CZh6.jpg",
+      "background": "//image.tmdb.org/t/p/original/92B6765nyQkIW8yLWt3pNcS6Cip.jpg"
+    }
+  },
+  "genres": {
+    "1": {
+      "name": "Ação"
+    },
+    "2": {
+      "name": "Comédia"
+    },
+    "1615384899026": {
+      "name": "Terror"
+    }
+  },
+  "count": 0
+}
