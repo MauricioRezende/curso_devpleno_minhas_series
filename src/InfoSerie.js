@@ -105,7 +105,7 @@ const NovoGenero = (props) => {
                         <br />
                         <label htmlFor='comments' className='form-label'>Gênero</label>
                         <br />
-                        <select onChange={onChange('genre_id')} value={form.genre_id}>
+                        <select onChange={onChange('genre_id')} value={form.genre_id} >
                             {genres.map( genre => <option key={genre.id} value={genre.id} >{genre.name}</option>)}
                         </select>
                         <br /><br />
