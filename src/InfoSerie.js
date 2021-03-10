@@ -7,7 +7,7 @@ const NovoGenero = (props) => {
     const [form, setForm] =  useState({})
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({})
-    const [mode, setMode] = useState('EDIT')
+    const [mode, setMode] = useState('INFO')
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const NovoGenero = (props) => {
             .then(res => {
                 setGenres(res.data.data)
             })
-    }, [])
+    }, [data])
 
     const masterHeader = {
         height: '50vh',
@@ -43,6 +43,13 @@ const NovoGenero = (props) => {
         })
     }
 
+    const seleciona = value => () => {
+        setForm({
+            ...form,
+            status: value
+        })
+    }
+
     const save = () => {
         console.log("clicou")
         axios.put('/api/series/' +  props.match.params.id,
@@ -57,7 +64,7 @@ const NovoGenero = (props) => {
     }
 
     if(success){
-      //return <Redirect to='/series' />
+      return <Redirect to='/series' />
     }
 
     return(
@@ -72,8 +79,8 @@ const NovoGenero = (props) => {
                             <div className='col-9'>
                                 <h1 className='font-weight-light text-white'>{data.name}</h1>
                                 <div className='lead text-white'>
-                                    <Badge color='success'>Assistido</Badge>
-                                    <Badge color='warning'>Para assistir</Badge>
+                                    {form.status === 'ASSISTIDO' && <Badge color='success'>Assistido</Badge>}
+                                    {form.status === 'PARA_ASSISTIR' && <Badge color='warning'>Para assistir</Badge>}
                                     <br />
                                     Gênero: {data.genre}
                                 </div>
@@ -82,8 +89,7 @@ const NovoGenero = (props) => {
                     </div>
                 </div>
             </header>
-            {JSON.stringify(form)}
-            <div>
+            <div className='container'>
                 <button className='btn btn-primary' onClick={() => setMode('EDIT')}>Editar</button>
             </div>
             {mode === 'EDIT' && 
@@ -99,10 +105,22 @@ const NovoGenero = (props) => {
                         <br />
                         <label htmlFor='comments' className='form-label'>Gênero</label>
                         <br />
-                        <select onChange={onChange('genre_id')}>
-                            {genres.map( genre => <option key={genre.id} value={genre.id} selected={genre.id === form.genre_id}>{genre.name}</option>)}
+                        <select onChange={onChange('genre_id')} value={form.genre_id}>
+                            {genres.map( genre => <option key={genre.id} value={genre.id} >{genre.name}</option>)}
                         </select>
                         <br /><br />
+                        <div className='form-check'>
+                            <input className='form-check-input' type='radio' name='status' value='ASSISTIDO' id='assistido' onChange={seleciona('ASSISTIDO')} checked={form.status === 'ASSISTIDO'}/>
+                            <label className='form-check-label' htmlFor='assistido'>
+                                Assistido
+                            </label>
+                        </div>
+                        <div className='form-check'>
+                            <input className='form-check-input' type='radio' name='status' value='PARA_ASSISTIR' id='paraAssistir' onChange={seleciona('PARA_ASSISTIR')} checked={form.status === 'PARA_ASSISTIR'}/>
+                            <label className='form-check-label' htmlFor='paraAssistir'>
+                                Para assistir
+                            </label>
+                        </div>
                         <button onClick={save} type='button' className='btn btn-primary'>Salvar</button>
                     </form>
                 </div>

@@ -32,7 +32,11 @@ const Series = () => {
                 <td>
                     <button className='btn btn-danger' onClick={() => removeLinha(record.id)}>Remover</button>
                     &nbsp;
-                    <Link to={'series/' + record.id} className='btn btn-warning'>Editar</Link>
+                    <Link to={'series/' + record.id} className='btn btn-warning'>Info</Link>
+                </td>
+                <td>
+                    {record.status === 'ASSISTIDO' && 'Assistido'}
+                    {record.status === 'PARA_ASSISTIR' && 'Para assistir'}
                 </td>
             </tr>
         )
@@ -62,6 +66,7 @@ const Series = () => {
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Ações</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
