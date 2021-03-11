@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
+import { FormGroup, Label, Input } from 'reactstrap'
 
 const NovoGenero = () => {
     const [name, setName] =  useState('')
@@ -54,14 +55,16 @@ const NovoGenero = () => {
                 <label htmlFor='nome' className='form-label'>Série</label>
                 <input type='text' id='nome' className='form-control' value={name}  onChange={onChange}/>
                 <br />
-                <label className='form-label'>Gênero:</label>
-                <br />
-                <select onChange={handleSelect} className='form-select'>
-                    {genres.map(genre => <option key={genre.id} value={genre.id}>{genre.name}</option>)}
-                </select>
-                <br />
-                <br />
+                <FormGroup>
+                    <Label htmlFor="exampleSelect">Gênero</Label>
+                    <Input type="select" name="selectMulti" id="exampleSelect" onChange={handleSelect}>
+                        <option></option>
+                        {genres.map(genre => <option key={genre.id} value={genre.id}>{genre.name}</option>)}
+                    </Input>
+                </FormGroup>
                 <button onClick={save} type='button' className='btn btn-primary'>Salvar</button>
+                &nbsp;&nbsp;
+                <Link className='btn btn-primary' to='/series'>Voltar</Link>
             </form>
         </div>
     )

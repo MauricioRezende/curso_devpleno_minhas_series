@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
-import { Badge } from 'reactstrap'
+import { Redirect, Link } from 'react-router-dom'
+import { Badge, FormGroup, Label, Input } from 'reactstrap'
 
 const NovoGenero = (props) => {
     const [form, setForm] =  useState({})
@@ -94,25 +94,32 @@ const NovoGenero = (props) => {
                 </div>
             </header>
             <div className='container'>
-                <button className='btn btn-primary' onClick={() => setMode('EDIT')}>Editar</button>
+                <br />
+                {mode != 'EDIT' &&
+                    <button className='btn btn-primary' onClick={() => setMode('EDIT')}>Editar</button>
+                }
+                {mode != 'INFO' && 
+                    <button className='btn btn-primary' onClick={() => setMode('INFO')}>Cancelar</button>
+                }
+                &nbsp;&nbsp;
+                <Link className='btn btn-primary' to='/series'>Voltar</Link>
             </div>
             {mode === 'EDIT' && 
                 <div className='container'>
                     <h1>Editar Série</h1>
-                    <button className='btn btn-primary' onClick={() => setMode('INFO')}>Cancelar</button>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor='nome' className='form-label'>Série</label>
                         <input type='text' id='nome' className='form-control' value={form.name}  onChange={onChange('name')}/>
                         <br />
                         <label htmlFor='comments' className='form-label'>Comentário</label>
                         <input type='text' id='comments' className='form-control' value={form.comments}  onChange={onChange('comments')}/>
-                        <br />
-                        <label htmlFor='comments' className='form-label'>Gênero</label>
-                        <br />
-                        <select onChange={onChange('genre_id')} value={form.genre_id} >
-                            {genres.map( genre => <option key={genre.id} value={genre.id} >{genre.name}</option>)}
-                        </select>
-                        <br /><br />
+                        <FormGroup>
+                            <Label htmlFor="exampleSelect">Gênero</Label>
+                            <Input type="select" name="selectMulti" id="exampleSelect" onChange={onChange('genre_id')} value={form.genre_id}>
+                                <option></option>
+                                {genres.map( genre => <option key={genre.id} value={genre.id} >{genre.name}</option>)}
+                            </Input>
+                        </FormGroup>
                         <div className='form-check'>
                             <input className='form-check-input' type='radio' name='status' value='ASSISTIDO' id='assistido' onChange={seleciona('ASSISTIDO')} checked={form.status === 'ASSISTIDO'}/>
                             <label className='form-check-label' htmlFor='assistido'>
@@ -125,6 +132,7 @@ const NovoGenero = (props) => {
                                 Para assistir
                             </label>
                         </div>
+                        <br />
                         <button onClick={save} type='button' className='btn btn-primary'>Salvar</button>
                     </form>
                 </div>

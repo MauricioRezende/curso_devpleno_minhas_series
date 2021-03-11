@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 const NovoGenero = () => {
     const [name, setName] =  useState('')
@@ -37,6 +37,8 @@ const NovoGenero = () => {
                 <input type='text' id='nome' className='form-control' value={name}  onChange={onChange}/>
                 <br />
                 <button onClick={save} type='button' className='btn btn-primary'>Salvar</button>
+                &nbsp;&nbsp;
+                <Link className='btn btn-primary' to='/generos'>Voltar</Link>
             </form>
         </div>
     )
